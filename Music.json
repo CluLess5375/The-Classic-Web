@@ -1,0 +1,26 @@
+{
+
+  "Default": [
+    "song1.mp3", 
+    "song2.mp3", 
+    "song3.mp3", 
+    "song4.mp3", 
+    "song5.mp3", 
+    "song6.mp3"],
+
+  "Minecraft": [
+    "minecraft 1 key.mp3",
+    "minecraft 2 door.mp3",
+    "minecraft 3 subwoofer lullaby.mp3",
+    "minecraft 4 death.mp3",
+    "minecraft 5 living mice.mp3",
+    "minecraft 6 moog city.mp3",
+    "minecraft 7 haggstrom.mp3",
+    "minecraft 8 minecraft.mp3",
+    "minecraft 9 oxygene.mp3",
+    "minecraft 10 equinoxe.mp3"],
+
+  "playlist3": [
+    "song1.mp3"]
+
+}

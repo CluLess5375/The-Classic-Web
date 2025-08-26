@@ -1,0 +1,379 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>The Classic Web</title>
+
+    <link rel="icon" href="images/icon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="CSS/index.css">
+
+    <!-- Loading Screen -->
+    <script>
+      // Wait for 4 seconds before hiding the loading screen
+      window.addEventListener("load", function () {
+        const loadingScreen = document.getElementById("loadingScreen");
+        const skipButton = document.getElementById("skipButton");
+    
+        // Automatically hide the loading screen after 4 seconds
+        const timeout = setTimeout(function () {
+          loadingScreen.classList.add("hidden"); // Add the hidden class to trigger the fade-out effect
+          setTimeout(() => {
+            loadingScreen.style.display = "none"; // Completely hide the loading screen after the fade-out
+          }, 1000); // Wait for the fade-out transition to complete (1 second)
+        }, 4000);
+    
+        // Allow users to skip the loading screen
+        skipButton.addEventListener("click", function () {
+          clearTimeout(timeout); // Cancel the automatic timeout
+          loadingScreen.classList.add("hidden"); // Add the hidden class to trigger the fade-out effect
+          setTimeout(() => {
+            loadingScreen.style.display = "none"; // Completely hide the loading screen after the fade-out
+          }, 1000); // Wait for the fade-out transition to complete (1 second)
+        });
+      });
+    </script>
+
+  </head>
+
+  <body>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="fade-out" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #c0c0c0; color: black; font-family: 'Times New Roman', serif; font-size: 22px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 3px solid #000080; box-sizing: border-box; z-index: 9999;">
+      <p style="margin-bottom: 20px; color: black;">You are connected to <b>TheClassicWeb.com</b>!</p>
+      <img src="images/aol-loading.gif" alt="Loading..." style="width: 450px; height: auto; border: 3px solid #000080; padding: 5px; background-color: #ffffff;">
+      <p style="margin-bottom: 20px; color: black;">Please wait... Loading...</p>
+      <button id="skipButton" style="margin-bottom: 150px; padding: 5px 15px; font-size: 14px; background-color: #000080; color: white; border: 1px solid black; cursor: pointer; font-family: 'Times New Roman', serif; border-radius: 2px;">
+        [Skip]
+      </button>
+    </div>
+
+    <br>
+
+    <table class="layout">
+
+      <!-- Header -->
+      <tr>
+        <td colspan="2">
+          <center class="header">WELCOME TO THE CLASSIC WEB</center>
+          <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="forms.html">Forms</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <!-- Left Side -->
+        <td class="content">
+            
+          <div class="box">
+            <h2>HELLO THERE WEB TRAVELER!</h2>
+            <p>You've stumbled upon a peaceful corner of the internet, free from pop-ups, cookies, and chaos.</p>
+            <p>Here, blinking text and MIDI music still rule. Grab a soda, sit back, and enjoy the gentle hum of cyberspace.</p>
+          </div>
+
+          <div class="box">
+            <h2>How Internet Pages Work</h2>
+            <p>Web browsers load an HTML file from a server or pc that's hosting set files, which tells them how to show text, images, and layout.</p>
+            <p>Some add CSS for style or JavaScript for interaction. But here? It's mostely <b>HTML</b> baby.</p>
+          </div>
+
+          <div class="box">
+            <h2>Why This Page Works Everywhere?</h2>
+            <ul>
+              <li>HTML 3 and 4 - Old but gold</li>
+              <li>No fancy modern code</li>
+              <li>No complicated JavaScript needed</li>
+              <li>Works offline</li>
+              <li>Loads instantly</li>
+            </ul>
+            <p><b>It's like the late 90s all over again.</b></p>
+          </div>
+
+          <div class="box">
+            <h2>The Old Internet Experience</h2>
+            <ul>
+              <li>Dial-up modems screeching their digital song</li>
+              <li>Email that sounded like "You've Got Mail!"</li>
+              <li>Guestbooks to sign and read</li>
+              <li>IRC and AOL chatrooms full of strangers</li>
+              <li>Webrings - a community before social media</li>
+              <li>Pages full of animated GIFs and hit counters</li>
+            </ul>
+            <p>This place is a tribute to that golden era - a little slower, a little weirder, and a whole lot more fun.</p>
+          </div>
+
+          <div class="box">
+            <h2>Just Vibes</h2>
+            <p>This isn't just a page. It's a <i>feeling</i>. No ads. No tracking. Just vibes.</p>
+            <p>Feel free to stay awhile. The internet's not going anywhere... unless someone picks up the phone :)</p>
+          </div>
+
+        </td>
+
+        <!-- Right Side -->
+        <td valign="top">
+
+          <!-- MusicPlayer -->
+          <div id="MusicPlayer">
+
+            <div style="text-align: center; margin: 20px 0;">
+                <img src="images/player.gif" alt="Old Media Player" style="width: 320px; height: auto; border: 3px solid #00ffff; background-color: #111111; padding: 10px; display: block; margin: 0 auto;">
+              </div>
+                
+              <center>
+                <div>
+                  <div style="margin-bottom: 10px;">
+                    <button id="shuffleButton" onclick="toggleShuffle()" style="margin: 0; padding: 10px; font-size: 16px; cursor: pointer; background-color: #111111; color: #00ff00; border: 2px solid #00ffff; font-family: 'Arial', sans-serif; margin-right: 10px;">
+                        🔀 On
+                    </button>
+                    <select id="playlistSelector" onchange="changePlaylist()" style="margin: 0; padding: 10px; font-size: 16px; background-color: #111111; color: #00ff00; border: 2px solid #00ffff; font-family: 'Arial', sans-serif;"></select>
+                    <button id="muteButton" onclick="toggleMute()" style="margin-left: 10px; padding: 10px; font-size: 16px; cursor: pointer; background-color: #111111; color: #00ff00; border: 2px solid #00ffff; font-family: 'Arial', sans-serif;">
+                      🔊
+                    </button>
+                  </div>
+
+                  <div style="margin-bottom: 10px;">
+                    <button id="prevButton" onclick="playPreviousSong()" style="padding: 10px 15px; font-size: 16px; cursor: pointer; background-color: #111111; color: #00ff00; border: 2px solid #00ffff; font-family: 'Arial', sans-serif; margin-right: 10px;">
+                      ⏮
+                    </button>
+                    <button id="playPauseButton" onclick="toggleMusic()" style="padding: 10px 15px; font-size: 16px; cursor: pointer; background-color: #111111; color: #00ff00; border: 2px solid #00ffff; font-family: 'Arial', sans-serif; margin-right: 10px;">
+                      ▶
+                    </button>
+                    <button id="nextButton" onclick="playNextSong()" style="padding: 10px 15px; font-size: 16px; cursor: pointer; background-color: #111111; color: #00ff00; border: 2px solid #00ffff; font-family: 'Arial', sans-serif;">
+                      ⏭
+                    </button>
+                  </div>
+                </div>
+              </center>
+                
+              <audio id="music" style="display: none;">
+                Your browser does not support the audio element.
+              </audio>
+                
+              <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                  const basePath = "audio/Music/";
+                  const playlists = {};
+                  let currentPlaylist = null;
+                  let playlist = [];
+                  let currentSongIndex = 0;
+                  const audio = document.getElementById("music");
+                  let isShuffleEnabled = true; // Shuffle is enabled by default
+                  let shuffleQueue = []; // Queue for shuffle mode
+                  let isPlaying = false;
+              
+                  // Fetch the playlist data from the JSON file
+                  fetch("Music.json")
+                    .then((response) => response.json())
+                    .then((folders) => {
+                      // Dynamically generate playlists based on the folder and file structure
+                      Object.keys(folders).forEach((folder) => {
+                        const folderPath = `${basePath}${folder}/`;
+                        playlists[folder] = folders[folder].map((file) => folderPath + file);
+                      });
+              
+                      // Ensure at least one playlist exists
+                      if (Object.keys(playlists).length === 0) {
+                        console.error("No playlists found. Please add folders and songs.");
+                        return;
+                      }
+              
+                      // Set the default playlist
+                      currentPlaylist = Object.keys(playlists)[0];
+                      playlist = playlists[currentPlaylist];
+              
+                      // Populate the playlist selector dropdown
+                      const selector = document.getElementById("playlistSelector");
+                      Object.keys(playlists).forEach((folder) => {
+                        const option = document.createElement("option");
+                        option.value = folder;
+                        option.textContent = folder;
+                        selector.appendChild(option);
+                      });
+              
+                      // Shuffle the playlist into the shuffle queue
+                      function shufflePlaylist() {
+                        if (!playlist || playlist.length === 0) {
+                          console.warn("Cannot shuffle an empty playlist.");
+                          return;
+                        }
+              
+                        shuffleQueue = [...playlist];
+                        for (let i = shuffleQueue.length - 1; i > 0; i--) {
+                          const j = Math.floor(Math.random() * (i + 1));
+                          [shuffleQueue[i], shuffleQueue[j]] = [shuffleQueue[j], shuffleQueue[i]];
+                        }
+                      }
+              
+                      // Change the playlist
+                      window.changePlaylist = function () {
+                        const selector = document.getElementById("playlistSelector");
+                        currentPlaylist = selector.value;
+                        playlist = playlists[currentPlaylist];
+                        currentSongIndex = 0;
+                        shufflePlaylist(); // Reshuffle the new playlist
+                        playSong(); // Start playing the first song in the new playlist
+                      };
+              
+                      // Play the current song
+                      function playSong() {
+                        if (!playlist || playlist.length === 0) {
+                          console.error("No songs available in the playlist.");
+                          return;
+                        }
+              
+                        if (isShuffleEnabled && shuffleQueue.length > 0) {
+                          audio.src = shuffleQueue.shift(); // Get the next song from the shuffle queue
+                          if (shuffleQueue.length === 0) {
+                            shufflePlaylist(); // Reshuffle when the queue is empty
+                          }
+                        } else {
+                          audio.src = playlist[currentSongIndex];
+                        }
+              
+                        audio.play().catch((err) => {
+                          console.error("Error playing audio:", err);
+                        });
+                      }
+              
+                      // Play the previous song
+                      window.playPreviousSong = function () {
+                        if (!playlist || playlist.length === 0) {
+                          console.error("No songs available in the playlist.");
+                          return;
+                        }
+              
+                        currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+                        playSong();
+                      };
+              
+                      // Play or pause the music
+                      window.toggleMusic = function () {
+                        if (!playlist || playlist.length === 0) {
+                          console.error("No songs available in the playlist.");
+                          return;
+                        }
+              
+                        if (isPlaying) {
+                          // Pause the music
+                          audio.pause();
+                          document.getElementById("playPauseButton").innerText = "▶";
+                        } else {
+                          // Resume or start the music
+                          audio.play().then(() => {
+                            document.getElementById("playPauseButton").innerText = "⏸";
+                          }).catch((err) => {
+                            console.error("Error playing audio:", err);
+                          });
+                        }
+                        isPlaying = !isPlaying;
+                      };
+              
+                      // Play the next song
+                      window.playNextSong = function () {
+                        if (!playlist || playlist.length === 0) {
+                          console.error("No songs available in the playlist.");
+                          return;
+                        }
+              
+                        if (isShuffleEnabled) {
+                          playSong();
+                        } else {
+                          currentSongIndex = (currentSongIndex + 1) % playlist.length;
+                          playSong();
+                        }
+                      };
+              
+                      // Mute or unmute the music
+                      let isMuted = false;
+                      window.toggleMute = function () {
+                        audio.muted = !isMuted;
+                        document.getElementById("muteButton").innerText = isMuted ? "🔊" : "🔇";
+                        isMuted = !isMuted;
+                      };
+              
+                      // Shuffle mode
+                      window.toggleShuffle = function () {
+                        isShuffleEnabled = !isShuffleEnabled;
+                        document.getElementById("shuffleButton").innerText = isShuffleEnabled ? "🔀 On" : "🔀 Off";
+                        if (isShuffleEnabled) {
+                          shufflePlaylist(); // Start the shuffle queue when shuffle is enabled
+                        }
+                      };
+              
+                      // Automatically play the next song when the current one ends
+                      audio.addEventListener("ended", function () {
+                        window.playNextSong();
+                      });
+              
+                      // Update the play/pause button state when the audio is paused or played
+                      audio.addEventListener("play", function () {
+                        isPlaying = true;
+                        document.getElementById("playPauseButton").innerText = "⏸";
+                      });
+              
+                      audio.addEventListener("pause", function () {
+                        isPlaying = false;
+                        document.getElementById("playPauseButton").innerText = "▶";
+                      });
+              
+                      // Set shuffle mode on by default
+                      document.getElementById("shuffleButton").innerText = "🔀On";
+                      shufflePlaylist(); // Shuffle the playlist initially
+              
+                      // Autoplay the first song when the page loads
+                      playSong();
+                    })
+                    .catch((err) => {
+                      console.error("Error loading playlists:", err);
+                    });
+                });
+              </script>
+          </div>
+
+          <br>
+          <img src="images/Dialup.gif" alt="Windows 95 Dialup internet" style="width: 310px; height: auto; padding: 0px;">
+          <br>
+          <br>
+          <br>
+          <img src="images/90s windows Dolphins.gif" alt="Windows 95 Dolphins" style="width: 270px; height: auto; padding: 0px;">
+
+          
+
+
+        </td>
+      </tr>
+
+      <!-- Footer -->
+      <tr>
+        <td colspan="2">
+          <div class="footer" >
+            Created by Lans van Glabbeek - Thanks for visiting The Classic Web!
+          </div>
+        </td>
+      </tr>
+
+      <!-- Marquee -->
+      <tr>
+        <td class="marquee" colspan="2">
+          <marquee behavior="scroll" direction="left" scrollamount="8">
+           This is The Classic Web! Enjoy the nostalgia and the vibes of the 90s internet!
+          </marquee>
+        </td>
+      </tr>
+      
+    </table>
+
+    <div id="connectionIndicator" style="position: fixed; bottom: 0px; right: -10px; width: 120px; height: auto; z-index: 9999;">
+      <img src="images/connection.gif" alt="Connecting..." style="width: 100%; height: auto; padding: 0px;">
+    </div>
+
+  </body>
+</html>

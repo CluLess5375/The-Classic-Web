@@ -1,0 +1,127 @@
+body {
+    background-image: url("../images/Background.jpg");
+    background-color: #000000;
+    color: #00ff00;
+    font-family: "Comic Sans MS", "Courier New", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  table.layout {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: 5px ridge #ff00ff;
+    background-color: #000000;
+  }
+
+  .header {
+    background-color: #0000ff;
+    color: #ffff00;
+    padding: 20px;
+    font-size: 55px;
+    text-shadow: 1px 1px #ff00ff;
+  }
+
+  .footer {
+    color: #00ffff;
+    text-align: center; 
+    padding: 5px; 
+    font-family: 'Comic Sans MS', sans-serif; 
+    font-size: 16px; 
+    text-shadow: 1px 1px #ff00ff, 0 0 10px #ff00ff; 
+    animation: glow 1.5s infinite alternate;
+  }
+
+  .fade-out {
+    opacity: 1; /* Fully visible by default */
+    transition: opacity 0.2s ease; /* Smooth fade-out transition */
+  }
+  
+  .fade-out.hidden {
+    opacity: 0; /* Fully transparent when hidden */
+    pointer-events: none; /* Prevent interaction after fading out */
+  }
+
+  .marquee {
+    background-color: #0000ff;
+    color: #ffff00;
+    text-shadow: 1px 1px #ff00ff;
+    font-size: 35px; 
+    padding: 15px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .box {
+    text-align: left;
+    border: 3px dashed #00ffff;
+    background-color: #111111;
+    padding: 15px;
+    padding-top: 5px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-size: 18px;
+  }
+
+  h1, h2 {
+    color: #00ffff;
+    text-decoration: underline;
+  }
+
+  ul {
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  .under-construction {
+    margin-top: 30px;
+  }
+
+  .navbar {
+    background: linear-gradient(90deg, #ff00ff, #0088ff); /* Gradient background */
+    padding: 0px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar a {
+    display: inline-block;
+    color: #ffff00;
+    text-decoration: none;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 20px;
+    padding: 6px 12px;
+    margin: 0 5px;
+    text-shadow: 2px 2px #000000;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+    border: 2px solid transparent;
+    border-radius: 10px;
+  }
+
+  .navbar a:hover {
+    transform: scale(1.1);
+  }
+
+  .navbar a:active {
+    transform: scale(0.95);
+  }
+
+  .post-meta {
+    font-size: 14px;
+    color: #aaaaaa;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .post-meta i {
+    color: #00ffff; /* Highlight the date */
+  }
+
+  .post-meta small i {
+    color: #ff00ff; /* Highlight the author */
+  }
